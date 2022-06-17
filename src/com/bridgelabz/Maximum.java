@@ -6,6 +6,7 @@ public class Maximum {
 
     //Main method
     public static void main(String[] args) {
+        System.out.println("Welcome to maximum number program");
         //Object created named Maximum
         Maximum obj = new Maximum();
         System.out.println("Maximum number among the integer numbers is: " + obj.compareTo());
