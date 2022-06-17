@@ -1,8 +1,15 @@
 package com.bridgelabz;
 
-import java.util.Scanner;
+//Generic class
+public class Maximum<T extends Comparable<T>> {
+    T x, y, z;
 
-public class Maximum {
+    public Maximum(T x, T y, T z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
 
     //Generic method which is comparing the given elements and returns maximum of it
     public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
