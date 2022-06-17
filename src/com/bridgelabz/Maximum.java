@@ -9,18 +9,18 @@ public class Maximum {
         System.out.println("Welcome to maximum number program");
         //Object created named Maximum
         Maximum obj = new Maximum();
-        System.out.println("Maximum number among the integer numbers is: " + obj.compareTo());
+        System.out.println("Maximum number among the float numbers is: " + obj.compareTo());
     }
 
     //compareTo method checks the max number among three numbers and returns it
-    public Integer compareTo() {
+    public Float compareTo() {
         //Scanner to take three numbers from user
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the three number");
-        Integer x = scanner.nextInt();
-        Integer y = scanner.nextInt();
-        Integer z = scanner.nextInt();
-        Integer max = x;
+        System.out.println("Enter the three float number");
+        Float x = scanner.nextFloat();
+        Float y = scanner.nextFloat();
+        Float z = scanner.nextFloat();
+        Float max = x;
         if (x > y && x > z) {
             max = x;
         } else if (y > x && y > z) {
