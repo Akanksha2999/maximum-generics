@@ -1,28 +1,30 @@
 package com.bridgelabz;
 
+import java.util.Arrays;
+
 //Generic class
-public class Maximum {
+public class Maximum<T> {
 
-    //Generic method which is comparing the given elements and returns maximum of it
-    public static <T extends Comparable<T>> T maximum(T x, T y, T z, T a) {
-        T max = x;
-        if (y.compareTo(max) > 0) {
-            max = y;
-        }
-        if (z.compareTo(max) > 0) {
-            max = z;
-        }
-        if (a.compareTo(max) > 0) {
-            max = a;
-
-        }
+    //Method to sort the array to get the maximum element
+    public T testCase(T... a) {
+        Arrays.sort(a);
+        T max = a[a.length - 1];
+        printMax(max);
         return max;
-    }//Main method
+    }
 
+    //Method to print the maximum values
+    private void printMax(T max) {
+        System.out.println("Maximum among the following is: " + max);
+    }
+
+    //Main method to initialize the variables
     public static void main(String[] args) {
-        System.out.printf("Maximum of %d, %d, %d and %d is %d \n\n", 50, 40, 20, 10, maximum(50, 40, 20, 10));
-        System.out.printf("Maximum of %f, %f, %f and %f is %f \n\n", 3.5, 4.5, 5.5, 2.5, maximum(3.5, 4.5, 5.5, 2.5));
-        System.out.printf("Maximum of %s, %s %s and %s is %s \n\n", "Apple", "Peach", "Banana", "Watermelon", maximum("Apple", "Peach", "Banana", "Watermelon"));
-        System.out.printf("Maximum of %c, %c %c and %c is %c \n\n", 'a', 'b', 'd', 'c', maximum('a', 'b', 'd', 'c'));
+        Maximum<Integer> integerMaximum = new Maximum<>();
+        Maximum<Float> floatMaximum = new Maximum<>();
+        Maximum<String> stringMaximum = new Maximum<>();
+        integerMaximum.testCase(50, 40, 20, 10);
+        floatMaximum.testCase(3.5f, 4.5f, 5.5f, 2.5f);
+        stringMaximum.testCase("Apple", "Peach", "Banana", "Watermelon");
     }
 }
